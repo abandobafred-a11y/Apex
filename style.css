@@ -1,0 +1,62 @@
+:root{
+  --bg-tint: rgba(255,250,240,0.22);
+  --card-bg: rgba(255,255,255,0.88);
+  --text: #1b1b1b;
+  --muted: #4b4b4b;
+  --shadow: 0 10px 30px rgba(12,18,25,0.12);
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5;color:var(--text);background:#111}
+
+.bg{
+  min-height:100vh;
+  width:100%;
+  background-image: url('image.png');
+  background-size: cover;
+  background-position: center center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.bg::after{
+  /* soft warm veil for readability */
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(250,240,230,0.16), rgba(10,10,10,0.18));
+  pointer-events:none;
+}
+
+.site-header{position:relative;z-index:1;text-align:center;padding:28px 18px}
+.title{font-family:Kalam, 'Segoe UI', sans-serif;font-weight:700;color:#fff;font-size:28px;margin-bottom:6px;text-shadow:0 6px 22px rgba(0,0,0,0.35)}
+.subtle{font-family:Inter, sans-serif;color:rgba(255,255,255,0.88);font-weight:400;font-size:14px}
+
+.content{z-index:1;position:relative;padding:20px;width:100%;display:flex;align-items:center;justify-content:center}
+
+.card{
+  width:min(92%,720px);
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:28px 26px;
+  box-shadow:var(--shadow);
+  color:var(--text);
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.card-title{font-family:Kalam, 'Segoe UI', sans-serif;font-weight:700;font-size:22px;margin-bottom:10px;color:#222}
+.card-desc{font-family:Inter, sans-serif;font-size:16px;color:var(--muted);margin-bottom:14px}
+.meta{font-family:Kalam, 'Segoe UI', sans-serif;color:#666;font-size:15px}
+
+.site-footer{z-index:1;padding:18px;text-align:center;color:rgba(255,255,255,0.9)}
+.footer-inner{display:inline-block;background:transparent;padding:6px 12px;border-radius:999px;color:rgba(255,255,255,0.9);font-size:14px}
+
+@media(max-width:480px){
+  .title{font-size:22px}
+  .card{padding:18px}
+  .card-desc{font-size:15px}
+}
